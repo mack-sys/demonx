@@ -6,7 +6,7 @@ import com.example.live.entity.DemonUser;
 
 public interface DemonUserServiceInterface {
 	
-	public void save(DemonUser demonUser);
+	public void saveDemonUser(DemonUser demonUser);
 	public List<DemonUser> getAllDemonUser();
 
 }
