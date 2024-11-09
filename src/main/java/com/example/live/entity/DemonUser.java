@@ -1,4 +1,4 @@
-package com.example.live.demox;
+package com.example.live.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
