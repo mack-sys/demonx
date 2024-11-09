@@ -32,7 +32,7 @@ public class DemoxApplication {
 	
 	@GetMapping("/")
 	public String test() {
-		return "Demox project working";
+		return "Demox project working!!";
 	}
 	
 	@PostMapping("/save")
