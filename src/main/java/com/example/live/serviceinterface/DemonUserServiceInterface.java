@@ -10,6 +10,8 @@ public interface DemonUserServiceInterface {
 	public void save(DemonUser demonUser);
 	
 	//getting all data from demon user
+	public void saveDemonUser(DemonUser demonUser);
+	
 	public List<DemonUser> getAllDemonUser();
 
 }
