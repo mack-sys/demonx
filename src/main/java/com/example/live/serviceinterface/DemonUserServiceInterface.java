@@ -12,6 +12,6 @@ public interface DemonUserServiceInterface {
 	//getting all data from demon user
 	public void saveDemonUser(DemonUser demonUser);
 	
-	public List<DemonUser> getAllDemonUser();
+	public List<DemonUser> getAllDemonUser()
 
 }
