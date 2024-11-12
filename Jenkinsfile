@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run Maven to build the project
-                    sh "${MAVEN_HOME}/bin/mvn clean install"
+                    bat  "${MAVEN_HOME}/bin/mvn clean install"
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     // Run Maven tests
-                    sh "${MAVEN_HOME}/bin/mvn test"
+                    bat  "${MAVEN_HOME}/bin/mvn test"
                 }
             }
         }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Package the Spring Boot app
-                    sh "${MAVEN_HOME}/bin/mvn package"
+                    bat  "${MAVEN_HOME}/bin/mvn package"
                 }
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     // Example deployment step (e.g., copy to server, or use Docker)
-                    sh 'scp target/your-app.jar user@your-server:/path/to/deploy/'
+                    bat  'scp target/your-app.jar user@your-server:/path/to/deploy/'
                 }
             }
         }
