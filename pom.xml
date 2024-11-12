@@ -64,6 +64,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.example.live.demox.DemoxApplication</mainClass> <!--
+					or specify the correct main class -->
+				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>deomox</finalName>
