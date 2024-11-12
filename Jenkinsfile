@@ -9,7 +9,10 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-user/your-repository.git'
+                git (
+                	url: 'https://github.com/your-user/your-repository.git',
+                	credentialsId: 'mack'
+                )
             }
         }
 
