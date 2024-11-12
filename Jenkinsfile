@@ -48,14 +48,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                script {
-                    // Example deployment step (e.g., copy to server, or use Docker)
-                    bat  'scp target/deomox.jar'
-                }
-            }
-        }
+     
     }
 
     post {
