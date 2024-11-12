@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    tools {
+        maven 'Maven3'  // Refer to the name of your Maven installation in Jenkins
+    }
 
     environment {
         MAVEN_HOME = 'C:/apache-tomcat-10.0.13/apache-tomcat-10.0.13/bin'
