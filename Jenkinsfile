@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = 'C:/apache-tomcat-10.0.13/apache-tomcat-10.0.13'
+        MAVEN_HOME = 'C:/apache-tomcat-10.0.13/apache-tomcat-10.0.13/bin'
         JAVA_HOME = 'C:/Program Files/Java/jdk-17'
     }
 
