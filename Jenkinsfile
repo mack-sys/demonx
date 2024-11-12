@@ -1,65 +1,45 @@
 pipeline {
     agent any
 
-    environment {
-        // Define any environment variables here if needed
-        MAVEN_HOME = tool 'Maven'  // Make sure you have configured a Maven tool in Jenkins
-        JAVA_HOME = tool 'JDK 11'  // Ensure the appropriate JDK is installed and configured
+    tools {
+        maven 'Maven' // Use the name you configured in Jenkins for Maven
+        jdk 'Java11'  // Use the name you configured in Jenkins for Java
     }
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                // Clone the repository
-                git url: 'https://github.com/mack-sys/demonx.git', branch: 'main'
+                echo 'Cloning Repository...'
+                git 'https://github.com/mack-sys/demonx.git'
             }
         }
-
+        
         stage('Build') {
             steps {
-                // Clean and build the project with Maven
-                sh 'mvn clean install' // Add a command here to avoid an empty steps block
+                echo 'Building Spring Boot Application...'
+                sh 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                // Run tests
-                 sh 'mvn test'
-            }
-            post {
-                always {
-                    // Archive test results even if tests fail
-                    junit '**/target/surefire-reports/*.xml'
-                }
-            }
-        }
-
-        stage('Code Analysis') {
-            steps {
-                // Run code analysis tools like SonarQube (if configured)
-                // Example: sh "${MAVEN_HOME}/bin/mvn sonar:sonar"
+                echo 'Running Tests...'
+                sh 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                // Package the Spring Boot application (typically generates a JAR file)
-                sh "${MAVEN_HOME}/bin/mvn package"
-            }
-            post {
-                success {
-                    archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: true
-                }
+                echo 'Packaging Application...'
+                sh 'mvn package'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Deploy the JAR to a server or run it locally
-                // Example for local: sh 'java -jar target/your-app.jar'
-                // Example for remote: use SCP, SSH, or Docker for deployment
-                echo 'Deploying the application...'
+                echo 'Deploying Application...'
+                // Replace the following line with your actual deployment commands
+                sh 'cp target/*.jar /path/to/deploy/location/'
             }
         }
     }
@@ -69,7 +49,7 @@ pipeline {
             echo 'Pipeline completed successfully!'
         }
         failure {
-            echo 'Pipeline failed!'
+            echo 'Pipeline failed.'
         }
     }
 }
