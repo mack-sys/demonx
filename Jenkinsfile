@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning Repository...'
-                git 'https://github.com/mack-sys/demonx.git'
+                git 'https://github.com/mack-sys/demonx.git' , branch: 'main'
             }
         }
         
