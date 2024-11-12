@@ -11,7 +11,8 @@ pipeline {
             steps {
                 git (
                 	url: 'https://github.com/mack-sys/demonx.git',
-                	credentialsId: 'github-pat'
+                	credentialsId: 'github-pat',
+                	branch: 'main'
                 )
             }
         }
