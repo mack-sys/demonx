@@ -52,7 +52,7 @@ pipeline {
             steps {
                 script {
                     // Example deployment step (e.g., copy to server, or use Docker)
-                    bat  'scp target/your-app.jar user@your-server:/path/to/deploy/'
+                    bat  'scp target/deomox.jar'
                 }
             }
         }
