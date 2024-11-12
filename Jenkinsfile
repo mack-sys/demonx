@@ -25,7 +25,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run tests
-                sh "${MAVEN_HOME}/bin/mvn test"
+                 sh 'mvn test'
             }
             post {
                 always {
