@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git (
-                	url: 'https://github.com/your-user/your-repository.git',
+                	url: 'https://github.com/mack-sys/demonx.git',
                 	credentialsId: 'github-pat'
                 )
             }
