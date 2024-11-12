@@ -11,7 +11,7 @@ pipeline {
             steps {
                 git (
                 	url: 'https://github.com/your-user/your-repository.git',
-                	credentialsId: 'mack'
+                	credentialsId: 'github-pat'
                 )
             }
         }
